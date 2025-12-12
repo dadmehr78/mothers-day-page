@@ -30,7 +30,7 @@
             width: 100%;
             height: 100%;
             pointer-events: none;
-            background-image: url('https://i.imgur.com/72xJpHQ.png');
+            background-image: url('https://i.ibb.co/Qp6RfQd/glitter.png'); /* hosted glitter image */
             opacity: 0.25;
             animation: glitterMove 8s linear infinite;
         }
@@ -169,7 +169,6 @@
 </head>
 
 <body>
-
 <div class="glitter"></div>
 
 <!-- Floating butterflies -->
@@ -178,7 +177,6 @@
 <i class="bi bi-emoji-kiss butterfly" style="left:50%; animation-delay:3s;"></i>
 
 <div class="container-box">
-
     <!-- Ribbon -->
     <div class="ribbon">روز مادر مبارک ❤️</div>
 
@@ -199,13 +197,13 @@
         <h3 style="color:white;">🎵 آهنگ‌ها</h3>
 
         <audio controls>
-            <source src="C:\Users\SURFACE\Downloads\Music\AUD-20251212-WA0006.m4a" type="audio/mpeg">
+            <source src="audio1.m4a" type="audio/mpeg">
         </audio>
 
         <br><br>
 
         <audio controls>
-            <source src="C:\Users\SURFACE\Downloads\Music\Voice 251212_112432.m4a" type="audio/mpeg">
+            <source src="audio2.m4a" type="audio/mpeg">
         </audio>
     </div>
 
@@ -220,60 +218,51 @@
     </p>
 </div>
 
-<!-- Random floating flowers -->
 <script>
-    const flowers = ["🌸","🌺","🌼","🌷","💮"];
+const flowers = ["🌸","🌺","🌼","🌷","💮"];
 
-    function random(min, max) {
-        return Math.random() * (max - min) + min;
+function random(min, max) { return Math.random() * (max - min) + min; }
+
+for (let i = 0; i < 15; i++) {
+    let f = document.createElement("div");
+    f.className = "flower";
+    f.style.left = random(0, window.innerWidth) + "px";
+    f.style.bottom = "-50px";
+    f.style.animationDuration = random(7, 15) + "s";
+    f.innerHTML = flowers[Math.floor(Math.random()*flowers.length)];
+    document.body.appendChild(f);
+}
+
+/* Message Button */
+function showLove() { document.getElementById("loveMsg").style.display = "block"; }
+
+/* Confetti Launcher */
+function launchConfetti() {
+    for (let i = 0; i < 70; i++) {
+        let conf = document.createElement("div");
+        conf.style.position = "fixed";
+        conf.style.width = "10px";
+        conf.style.height = "10px";
+        conf.style.background = "hsl(" + Math.random()*360 + ",100%,60%)";
+        conf.style.top = "50%";
+        conf.style.left = "50%";
+        conf.style.opacity = 1;
+        conf.style.transform = "translate(-50%,-50%)";
+        conf.style.borderRadius = "3px";
+        conf.style.zIndex = "9999";
+        document.body.appendChild(conf);
+
+        let x = (Math.random() - 0.5) * 600;
+        let y = (Math.random() - 0.5) * 600;
+
+        conf.animate([
+            { transform: "translate(-50%,-50%)", opacity: 1 },
+            { transform: `translate(${x}px,${y}px)`, opacity: 0 }
+        ], { duration: 1200, easing: "ease-out" });
+
+        setTimeout(() => conf.remove(), 1500);
     }
-
-    for (let i = 0; i < 15; i++) {
-        let f = document.createElement("div");
-        f.className = "flower";
-        f.style.left = random(0, window.innerWidth) + "px";
-        f.style.bottom = "-50px";
-        f.style.animationDuration = random(7, 15) + "s";
-        f.innerHTML = flowers[Math.floor(Math.random()*flowers.length)];
-        document.body.appendChild(f);
-    }
-
-    /* Message Button */
-    function showLove() {
-        document.getElementById("loveMsg").style.display = "block";
-    }
-
-    /* Confetti Launcher (simple JS without library) */
-    function launchConfetti() {
-        for (let i = 0; i < 70; i++) {
-            let conf = document.createElement("div");
-            conf.style.position = "fixed";
-            conf.style.width = "10px";
-            conf.style.height = "10px";
-            conf.style.background = "hsl(" + Math.random()*360 + ",100%,60%)";
-            conf.style.top = "50%";
-            conf.style.left = "50%";
-            conf.style.opacity = 1;
-            conf.style.transform = "translate(-50%,-50%)";
-            conf.style.borderRadius = "3px";
-            conf.style.zIndex = "9999";
-            document.body.appendChild(conf);
-
-            let x = (Math.random() - 0.5) * 600;
-            let y = (Math.random() - 0.5) * 600;
-
-            conf.animate([
-                { transform: "translate(-50%,-50%)", opacity: 1 },
-                { transform: `translate(${x}px,${y}px)`, opacity: 0 }
-            ], {
-                duration: 1200,
-                easing: "ease-out"
-            });
-
-            setTimeout(() => conf.remove(), 1500);
-        }
-    }
+}
 </script>
-
 </body>
 </html>
