@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>روز مادر مبارک</title>
+
+    <!-- Bootstrap Icons CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: "Vazirmatn", sans-serif;
+            background: linear-gradient(135deg, #ffccd5, #ffc8a2, #ffd6e0);
+            background-size: 300% 300%;
+            animation: bgFlow 15s infinite alternate ease-in-out;
+            overflow-x: hidden;
+        }
+
+        @keyframes bgFlow {
+            0% { background-position: left; }
+            100% { background-position: right; }
+        }
+
+        /* Glitter overlay */
+        .glitter {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background-image: url('https://i.imgur.com/72xJpHQ.png');
+            opacity: 0.25;
+            animation: glitterMove 8s linear infinite;
+        }
+
+        @keyframes glitterMove {
+            from { background-position: 0 0; }
+            to { background-position: 400px 400px; }
+        }
+
+        .container-box {
+            background: rgba(255,255,255,0.3);
+            backdrop-filter: blur(10px);
+            margin: 60px auto;
+            max-width: 750px;
+            padding: 45px;
+            border-radius: 35px;
+            position: relative;
+            animation: fadeIn 2.3s ease;
+            box-shadow: 0 0 35px rgba(255,255,255,0.5);
+            border: 3px dashed rgba(255,255,255,0.7);
+            overflow: hidden;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Animated Ribbon */
+        .ribbon {
+            width: 100%;
+            background: #ff0055;
+            color: white;
+            padding: 15px 0;
+            font-size: 26px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px #fff;
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { box-shadow: 0 0 10px #ff0055; }
+            50% { box-shadow: 0 0 25px #ff99bb; }
+            100% { box-shadow: 0 0 10px #ff0055; }
+        }
+
+        /* Typewriter effect */
+        .typewriter {
+            overflow: hidden;
+            white-space: nowrap;
+            border-left: 3px solid white;
+            width: 0;
+            animation: typing 5s steps(40) forwards, blink 0.7s infinite;
+            font-size: 22px;
+            margin: 15px auto;
+            color: white;
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink {
+            0% { border-color: transparent; }
+            50% { border-color: white; }
+            100% { border-color: transparent; }
+        }
+
+        .heart {
+            font-size: 70px;
+            color: #ff1744;
+            animation: beat 1.5s infinite;
+        }
+
+        @keyframes beat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.3); }
+            100% { transform: scale(1); }
+        }
+
+        .audio-box {
+            margin-top: 30px;
+            padding: 25px;
+            border-radius: 20px;
+            background: rgba(255,255,255,0.35);
+            box-shadow: 0 0 20px rgba(255,255,255,0.4);
+        }
+
+        /* Buttons */
+        .btn-custom {
+            padding: 12px 25px;
+            background: #ff2e63;
+            border-radius: 12px;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 5px 20px rgba(255,46,99,0.4);
+        }
+
+        .btn-custom:hover {
+            transform: scale(1.1);
+            background: #ff0055;
+        }
+
+        /* Flowers */
+        .flower {
+            position: absolute;
+            font-size: 40px;
+            animation: floatFlower 10s infinite linear;
+            opacity: 0.8;
+        }
+
+        @keyframes floatFlower {
+            0% { transform: translateY(0) rotate(0deg); }
+            100% { transform: translateY(-900px) rotate(360deg); }
+        }
+
+        /* Butterflies */
+        .butterfly {
+            position: fixed;
+            font-size: 30px;
+            color: #ff9ee2;
+            animation: flutter 7s infinite ease-in-out;
+            opacity: 0.9;
+        }
+
+        @keyframes flutter {
+            0% { transform: translate(0,0) scale(1); }
+            50% { transform: translate(40px,-80px) scale(1.3); }
+            100% { transform: translate(0,-160px) scale(1); }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="glitter"></div>
+
+<!-- Floating butterflies -->
+<i class="bi bi-emoji-heart-eyes butterfly" style="left:5%; animation-delay:0s;"></i>
+<i class="bi bi-emoji-heart-eyes butterfly" style="left:80%; animation-delay:1.8s;"></i>
+<i class="bi bi-emoji-kiss butterfly" style="left:50%; animation-delay:3s;"></i>
+
+<div class="container-box">
+
+    <!-- Ribbon -->
+    <div class="ribbon">روز مادر مبارک ❤️</div>
+
+    <!-- Heart -->
+    <div class="heart"><i class="bi bi-heart-fill"></i></div>
+
+    <!-- Typewriter -->
+    <div class="typewriter">مادر عزیزم، تو نقطهٔ روشن زندگی من هستی...</div>
+
+    <p style="font-size:20px; color:white; line-height:2;">
+        آرزو می‌کنم همیشه دلت پر از عشق باشه  
+        و لحظه‌هات پر از آرامش و لبخند.  
+        تو زیباترین هدیهٔ خدا هستی 🌸💖
+    </p>
+
+    <!-- Audio Section -->
+    <div class="audio-box">
+        <h3 style="color:white;">🎵 آهنگ‌ها</h3>
+
+        <audio controls>
+            <source src="audio1.mp3" type="audio/mpeg">
+        </audio>
+
+        <br><br>
+
+        <audio controls>
+            <source src="audio2.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <br>
+
+    <!-- Buttons -->
+    <button class="btn-custom" onclick="launchConfetti()">پرتاب کنفِتی 🎉</button>
+    <button class="btn-custom" onclick="showLove()">پیام مخصوص</button>
+
+    <p id="loveMsg" style="display:none; margin-top:15px; font-size:19px; color:white;">
+        مادرم… تو دلیل آرامش قلب منی ♥🌷
+    </p>
+</div>
+
+<!-- Random floating flowers -->
+<script>
+    const flowers = ["🌸","🌺","🌼","🌷","💮"];
+
+    function random(min, max) {
+        return Math.random() * (max - min) + min;
+    }
+
+    for (let i = 0; i < 15; i++) {
+        let f = document.createElement("div");
+        f.className = "flower";
+        f.style.left = random(0, window.innerWidth) + "px";
+        f.style.bottom = "-50px";
+        f.style.animationDuration = random(7, 15) + "s";
+        f.innerHTML = flowers[Math.floor(Math.random()*flowers.length)];
+        document.body.appendChild(f);
+    }
+
+    /* Message Button */
+    function showLove() {
+        document.getElementById("loveMsg").style.display = "block";
+    }
+
+    /* Confetti Launcher (simple JS without library) */
+    function launchConfetti() {
+        for (let i = 0; i < 70; i++) {
+            let conf = document.createElement("div");
+            conf.style.position = "fixed";
+            conf.style.width = "10px";
+            conf.style.height = "10px";
+            conf.style.background = "hsl(" + Math.random()*360 + ",100%,60%)";
+            conf.style.top = "50%";
+            conf.style.left = "50%";
+            conf.style.opacity = 1;
+            conf.style.transform = "translate(-50%,-50%)";
+            conf.style.borderRadius = "3px";
+            conf.style.zIndex = "9999";
+            document.body.appendChild(conf);
+
+            let x = (Math.random() - 0.5) * 600;
+            let y = (Math.random() - 0.5) * 600;
+
+            conf.animate([
+                { transform: "translate(-50%,-50%)", opacity: 1 },
+                { transform: `translate(${x}px,${y}px)`, opacity: 0 }
+            ], {
+                duration: 1200,
+                easing: "ease-out"
+            });
+
+            setTimeout(() => conf.remove(), 1500);
+        }
+    }
+</script>
+
+</body>
+</html>
